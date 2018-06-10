@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="warnAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>./logs/warn/warn.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/warn/warn.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>./logs/error/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/error/error.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="bizAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>./logs/biz/biz.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/biz/biz.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="accessAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Prudent>false</Prudent>
+        <file>./logs/access/access.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/access/access.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="clientAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>./logs/client/client.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/client/client.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="scheduleAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>./logs/schedule/schedule.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/schedule/schedule.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="daoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Prudent>false</Prudent>
+        <file>./logs/dao/dao.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/dao/dao.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="performanceAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>./logs/performance/performance.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ./logs/performance/performance.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%p] [%t] [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="warn" level="warn">
+        <appender-ref ref="warnAppender"/>
+    </logger>
+
+    <logger name="error" level="error">
+        <appender-ref ref="errorAppender"/>
+    </logger>
+
+    <logger name="access" level="info">
+        <appender-ref ref="accessAppender"/>
+    </logger>bizAppender
+
+    <logger name="biz" level="info">
+        <appender-ref ref="bizAppender"/>
+    </logger>
+
+    <logger name="client" level="info">
+        <appender-ref ref="clientAppender"/>
+    </logger>
+
+    <logger name="schedule" level="info">
+        <appender-ref ref="scheduleAppender"/>
+    </logger>
+
+    <logger name="performance" level="info">
+        <appender-ref ref="performanceAppender"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>
